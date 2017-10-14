@@ -10,7 +10,7 @@ Physics::Physics()
 
 void Physics::Projectile(Transformable* a, float i, float j)
 {
-//	a.setPosition(i, j);
+	a.setPosition(i, j);
 }
 
 

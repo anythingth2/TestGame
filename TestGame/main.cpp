@@ -69,7 +69,7 @@ int main()
 			}
 			else if (Keyboard::isKeyPressed(Keyboard::Space))
 			{
-				i = 0;
+				
 				j = 800-2*a.getRadius();
 				t = Clk.getElapsedTime();
 				tint = t.asMilliseconds();
@@ -88,7 +88,8 @@ int main()
 		int d = (temp - tint);
 		if (abs(d) <= 500)
 		{
-			j = 500*d*d / 250000+300-2* a.getRadius();
+			i = i;
+			j = (500*d*d / 250000)+300-2* a.getRadius();
 
 			
 			cout << d << "\n";
