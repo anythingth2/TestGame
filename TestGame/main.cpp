@@ -4,7 +4,6 @@
 #include "Physics.h"
 using namespace sf;
 using namespace std;
-//using namespace Physics;
 
 
 int main()
@@ -96,7 +95,8 @@ int main()
 		}
 		window.clear();
 		test = Vector2f(i, j);
-		a.setPosition(test);
+		
+		p.setPos(&a, i, j);
 		window.draw(a);
 		window.display();
 		
