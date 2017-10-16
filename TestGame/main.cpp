@@ -1,9 +1,11 @@
 #include<SFML\Graphics.hpp>
+#include<SFML\System.hpp>
 #include<iostream>
 #include<conio.h>
 #include "Physics.h"
 using namespace sf;
 using namespace std;
+using namespace abc;
 
 
 int main()
@@ -68,11 +70,19 @@ int main()
 			}
 			else if (Keyboard::isKeyPressed(Keyboard::Space))
 			{
-				
-				j = 800-2*a.getRadius();
+				Thread thr(&projectile,&a);
+				thr.launch();
+/*				for (int l = 1; l < 1000;l++)
+				{
+					cout << l;
+				}*/
+//				p.Projectile(&a);
+//				projectile(&a);
+/*				j = 800-2*a.getRadius();
 				t = Clk.getElapsedTime();
 				tint = t.asMilliseconds();
-				temp = tint + 500;
+				temp = tint + 500;*/
+				cout << "\na\n";
 			}
 			
 			Vector2f pcir = a.getPosition();
@@ -82,7 +92,7 @@ int main()
 
 		}
 		
-		t = Clk.getElapsedTime();
+/*		t = Clk.getElapsedTime();
 		tint = t.asMilliseconds();
 		int d = (temp - tint);
 		if (abs(d) <= 500)
@@ -92,11 +102,12 @@ int main()
 
 			
 			cout << d << "\n";
-		}
+		}*/
 		window.clear();
 		test = Vector2f(i, j);
-		
-		p.setPos(&a, i, j);
+		cout << "test\n";
+//		a.setPosition(i, j);
+//		p.setPos(&a, i, j);
 		window.draw(a);
 		window.display();
 		
